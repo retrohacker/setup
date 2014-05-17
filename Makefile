@@ -21,7 +21,7 @@ default:
 	exit
 
 cleanup:
-	# Cleanup should only be run if you default errors mid-setup
+	# Cleanup should only be run if the default rule errors mid-setup
 	sudo rm -rf .vim .vimrc .xterm .Xresources .zsh .zshrc /usr/local/bin/docker
 	sudo aptitude remove zsh nodejs golang docker.io htop build-essential nodejs -y
 	sudo add-apt-repository ppa:chris-lea/node.js -ry
