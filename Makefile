@@ -15,9 +15,13 @@ default:
 	sudo aptitude update
 	sudo aptitude install nodejs -y
 	npm completion >> .zshrc
+	# Setup workspace
+	mkdir -p Development/code
+	# Logout for changes to take effect
 	exit
 
 cleanup:
+	# Cleanup should only be run if you default errors mid-setup
 	sudo rm -rf .vim .vimrc .xterm .Xresources .zsh .zshrc /usr/local/bin/docker
 	sudo aptitude remove zsh nodejs golang docker.io htop build-essential nodejs -y
 	sudo add-apt-repository ppa:chris-lea/node.js -ry
