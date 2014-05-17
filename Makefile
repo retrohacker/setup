@@ -6,9 +6,10 @@ default:
 	git clone https://github.com/Crackerz/zsh.git .zsh
 	git -C .zsh submodule update --init
 	ln .zsh/.zshrc .zshrc
-	sudo aptitude install zsh -y
-	sudo chsh ubuntu -s /bin/zsh
+	sudo aptitude install zsh nodejs golang docker.io htop build-essential -y
+	sudo chsh ${USER} -s /bin/zsh
+	sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 cleanup:
 	rm -rf .vim .vimrc .xterm .Xresources .zsh .zshrc
-	sudo aptitude remove zsh -y
+	sudo aptitude remove zsh nodejs golang docker.io htop build-essential -y
 	sudo chsh ubuntu -s /bin/bash
