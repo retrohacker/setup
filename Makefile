@@ -13,6 +13,7 @@ default:
 	sudo add-apt-repository ppa:chris-lea/node.js -y
 	sudo aptitude update
 	sudo aptitude install nodejs -y
+	npm completion >> .zshrc
 
 cleanup:
 	sudo rm -rf .vim .vimrc .xterm .Xresources .zsh .zshrc /usr/local/bin/docker
