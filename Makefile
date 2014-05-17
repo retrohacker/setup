@@ -9,11 +9,13 @@ default:
 	sudo aptitude install zsh golang docker.io htop build-essential python-software-properties python g++ -y
 	sudo chsh ${USER} -s /bin/zsh
 	sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
+	sudo usermod -aG docker ubuntu
 	# Install NodeJS!
 	sudo add-apt-repository ppa:chris-lea/node.js -y
 	sudo aptitude update
 	sudo aptitude install nodejs -y
 	npm completion >> .zshrc
+	exit
 
 cleanup:
 	sudo rm -rf .vim .vimrc .xterm .Xresources .zsh .zshrc /usr/local/bin/docker
